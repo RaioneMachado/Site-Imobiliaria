@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LK Imóveis - Compra e Aluguel de Imóveis</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Cabeçalho -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="img/logo.png" alt="LK Imóveis">
+                </a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="comprar.html">Comprar</a></li> <!-- Link corrigido -->
+                    <li><a href="alugar.html">Alugar</a></li>
+                    <li><a href="#">Lançamentos</a></li>
+                    <li><a href="#">Contato</a></li>
+                </ul>
+            </nav>
+            <div class="menu-mobile">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Banner Principal -->
+    <section class="banner">
+        <img src="imagens/pexels-lalesh-242827.jpg" alt="Encontre o imóvel dos seus sonhos">
+        <div class="overlay">
+            <h1>ENCONTRE SEU IMÓVEL</h1>
+            <p>Encontre o imóvel dos seus sonhos conosco!</p>
+        </div>
+    </section>
+    <section class="search-bar">
+        <div class="container">
+            <form id="form-busca">
+                <select name="tipo">
+                    <option value="">Tipo de Imóvel</option>
+                    <option value="casa">Casa</option>
+                    <option value="apartamento">Apartamento</option>
+                    <option value="terreno">Terreno</option>
+                    <option value="comercial">Comercial</option>
+                </select>
+                <select name="finalidade">
+                    <option value="">Finalidade</option>
+                    <option value="venda">Comprar</option>
+                    <option value="aluguel">Alugar</option>
+                </select>
+                <select name="cidade">
+                    <option value="">Cidade</option>
+                    <option value="sao-paulo">São Paulo</option>
+                    <option value="rio-de-janeiro">Rio de Janeiro</option>
+                    <option value="belo-horizonte">Belo Horizonte</option>
+                </select>
+                <select name="bairro">
+                    <option value="">Bairro</option>
+                    <option value="centro">Centro</option>
+                    <option value="barra">Barra</option>
+                    <option value="savassi">Savassi</option>
+                </select>
+                <button type="submit">Buscar</button>
+            </form>
+        </div>
+    </section>
+
+<!-- Destaques -->
+<section class="destaques">
+    <div class="container">
+        <h2 class="section-title">Imóveis em Destaque</h2>
+        <div class="grid-imoveis">
+            <!-- Imóvel 1 - Apartamento à Venda -->
+            <div class="imovel-card" 
+                 data-id="1"
+                 data-tipo="apartamento"
+                 data-finalidade="venda"
+                 data-cidade="sao-paulo"
+                 data-bairro="centro"
+                 data-quartos="2"
+                 data-banheiros="2"
+                 data-vagas="1"
+                 data-area="75"
+                 data-preco="450000">
+                <div class="imovel-img">
+                    <img src="imagens/casa1/capa.jpg.jpg" alt="Apartamento com 2 quartos">
+                    <span class="tipo">Venda</span>
+                    <span class="preco">R$ 600.000</span>
+                </div>
+                <div class="imovel-info">
+                    <h3>Casa 3 quartos e 3 banheiros</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Centro, São Paulo - SP</p>
+                    <ul class="caracteristicas">
+                        <li><i class="fas fa-bed"></i> <span>2</span> quartos</li>
+                        <li><i class="fas fa-bath"></i> <span>2</span> banheiros</li>
+                        <li><i class="fas fa-car"></i> <span>1</span> vaga</li>
+                        <li><i class="fas fa-vector-square"></i> <span>75</span>m²</li>
+                    </ul>
+                    <a href="pages/detalhes-imovel.html?id=1" class="btn-detalhes">Ver Detalhes</a>
+                </div>
+            </div>
+
+            <!-- Imóvel 2 - Casa para Alugar -->
+            <div class="imovel-card" 
+                 data-id="2"
+                 data-tipo="casa"
+                 data-finalidade="aluguel"
+                 data-cidade="rio-de-janeiro"
+                 data-bairro="barra"
+                 data-quartos="3"
+                 data-banheiros="2"
+                 data-vagas="2"
+                 data-area="120"
+                 data-preco="2500">
+                <div class="imovel-img">
+                    <img src="img/imovel2.jpg" alt="Casa com 3 quartos">
+                    <span class="tipo aluguel">Aluguel</span>
+                    <span class="preco">R$ 2.500/mês</span>
+                </div>
+                <div class="imovel-info">
+                    <h3>Casa 3 quartos</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Barra, Rio de Janeiro - RJ</p>
+                    <ul class="caracteristicas">
+                        <li><i class="fas fa-bed"></i> <span>3</span> quartos</li>
+                        <li><i class="fas fa-bath"></i> <span>2</span> banheiros</li>
+                        <li><i class="fas fa-car"></i> <span>2</span> vagas</li>
+                        <li><i class="fas fa-vector-square"></i> <span>120</span>m²</li>
+                    </ul>
+                    <a href="pages/detalhes-imovel.html?id=2" class="btn-detalhes">Ver Detalhes</a>
+                </div>
+            </div>
+
+            <!-- Imóvel 3 - Terreno à Venda -->
+            <div class="imovel-card" 
+                 data-id="3"
+                 data-tipo="terreno"
+                 data-finalidade="venda"
+                 data-cidade="belo-horizonte"
+                 data-bairro="savassi"
+                 data-area="300"
+                 data-preco="350000">
+                <div class="imovel-img">
+                    <img src="img/imovel3.jpg" alt="Terreno em Savassi">
+                    <span class="tipo">Venda</span>
+                    <span class="preco">R$ 350.000</span>
+                </div>
+                <div class="imovel-info">
+                    <h3>Terreno comercial</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Savassi, Belo Horizonte - MG</p>
+                    <ul class="caracteristicas">
+                        <li><i class="fas fa-vector-square"></i> <span>300</span>m²</li>
+                        <li><i class="fas fa-map-marked-alt"></i> Zona comercial</li>
+                        <li><i class="fas fa-building"></i> Permissão para 5 pavimentos</li>
+                    </ul>
+                    <a href="pages/detalhes-imovel.html?id=3" class="btn-detalhes">Ver Detalhes</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+                <!-- Adicione mais imóveis conforme necessário -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Compra ou Locação -->
+<section class="compra-aluguel">
+    <div class="container">
+        <h2 class="section-title">Seja compra ou locação, podemos te ajudar!</h2>
+        <div class="blocos-container">
+            <!-- Bloco Comprar -->
+            <div class="bloco comprar" onclick="window.location.href='comprar.html'">
+                <div class="bloco-content">
+                    <i class="fas fa-home"></i>
+                    <h3>Comprar Imóvel</h3>
+                    <p>Encontre o imóvel dos seus sonhos para chamar de seu.</p>
+                    <button class="btn-saiba-mais">Saiba Mais</button>
+                </div>
+            </div>
+            
+            <!-- Bloco Alugar -->
+            <div class="bloco alugar" onclick="window.location.href='alugar.html'">
+                <div class="bloco-content">
+                    <i class="fas fa-key"></i>
+                    <h3>Alugar Imóvel</h3>
+                    <p>Encontre o lugar perfeito para morar agora mesmo.</p>
+                    <button class="btn-saiba-mais">Saiba Mais</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Rodapé -->
+    <footer>
+        <div class="container">
+            <div class="footer-col">
+                <img src="img/logo.png" alt="LK Imóveis" class="logo-footer">
+                <p>A LK Imóveis está no mercado há mais de 10 anos, ajudando clientes a encontrar o imóvel perfeito.</p>
+            </div>
+            <div class="footer-col">
+                <h3>Contato</h3>
+                <p><i class="fas fa-phone"></i> (11) 1234-5678</p>
+                <p><i class="fas fa-envelope"></i> contato@imoveislk.com.br</p>
+                <p><i class="fas fa-map-marker-alt"></i> Av. Paulista, 1000 - São Paulo/SP</p>
+            </div>
+            <div class="footer-col">
+                <h3>Links Úteis</h3>
+                <ul>
+                    <li><a href="#">Política de Privacidade</a></li>
+                    <li><a href="#">Termos de Uso</a></li>
+                    <li><a href="#">Trabalhe Conosco</a></li>
+                    <li><a href="#">Fale Conosco</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2025 LK Imóveis - Todos os direitos reservados</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
