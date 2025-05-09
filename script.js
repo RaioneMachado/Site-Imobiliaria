@@ -273,3 +273,48 @@ function filtrarImoveis() {
 document.addEventListener('DOMContentLoaded', function() {
     filtrarImoveis();
 });
+// Adicione esta função ao seu código existente
+function configurarFiltroRapido() {
+    const blocosOpcao = document.querySelectorAll('.bloco-opcao');
+    const imoveisCards = document.querySelectorAll('.imovel-card');
+    
+    blocosOpcao.forEach(bloco => {
+        bloco.addEventListener('click', function() {
+            const finalidade = this.getAttribute('data-finalidade');
+            
+            // Aplicar filtro
+            imoveisCards.forEach(card => {
+                const cardFinalidade = card.getAttribute('data-finalidade');
+                if (finalidade === 'todos' || cardFinalidade === finalidade) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+            
+            // Atualizar o formulário de filtro (se existir)
+            const formFinalidade = document.querySelector('select[name="finalidade"]');
+            if (formFinalidade) {
+                formFinalidade.value = finalidade;
+            }
+            
+            // Rolagem suave para a seção de resultados
+            document.querySelector('.grid-imoveis').scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
+}
+
+// Chame esta função no seu DOMContentLoaded
+document.addEventListener('DOMContentLoaded', function() {
+    configurarFiltroRapido();
+    // ... seu código existente ...
+});
+document.querySelector('.whatsapp-float').addEventListener('mouseenter', function() {
+    this.style.animation = 'none';
+  });
+  
+  document.querySelector('.whatsapp-float').addEventListener('mouseleave', function() {
+    this.style.animation = 'pulse 2s infinite';
+  });

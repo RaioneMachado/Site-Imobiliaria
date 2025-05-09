@@ -3,50 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LK Imóveis - Compra e Aluguel de Imóveis</title>
+    <title>Administração Imobiliária - Compra e Aluguel de Imóveis</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
 </head>
 <body>
-<!-- Cabeçalho Elegante -->
-<header class="lk-header">
-    <div class="lk-container">
-        <div class="lk-logo">
+    <header class="lk-header">
+        <div class="lk-container">
+          <!-- Logo -->
+          <div class="lk-logo">
             <a href="index.html">
-                <img src="imagens/logo.png" alt="LK Imóveis" class="lk-logo-img">
+              <img src="imagens/WhatsApp Image 2025-05-09 at 13.36.03.jpeg" alt="LK Imóveis" class="lk-logo-img">
             </a>
-        </div>
-        
-        <div class="lk-contact-info">
+          </div>
+      
+          <!-- Contatos (Desktop apenas) -->
+          <div class="lk-contact-info hide-on-mobile">
             <div class="lk-contact-item">
-                <div class="lk-contact-icon">
-                    <i class="fas fa-phone-alt"></i>
-                </div>
-                <div class="lk-contact-text">
-                    <span class="lk-contact-label">Fale conosco</span>
-                    <div class="lk-phone-numbers">
-                        <span>(14) 99784-9297</span>
-                      
-                        <span>(14) 99708-3773</span>
-                    </div>
-                </div>
+              <i class="fas fa-phone-alt lk-contact-icon"></i>
+              <div class="lk-contact-text">
+                <span class="lk-contact-label"><span style="color: blue;">Fale conosco </span><br> </span>
+                <span class="lk-phone-number"><strong>Eduardo - Administração de Imóveis</strong><br><strong>(14) 99784-9297</strong></span>
+              </div>
             </div>
-            
+      
             <div class="lk-contact-item">
-                <div class="lk-contact-icon">
-                    <i class="far fa-clock"></i>
-                </div>
-                <div class="lk-contact-text">
-                    <span class="lk-contact-label">Horário de atendimento</span>
-                    <span>Seg a Sex das 09hrs às 18hrs</span>
-                </div>
+              <i class="fas fa-phone-alt lk-contact-icon"></i>
+              <div class="lk-contact-text">
+                <span class="lk-contact-label"><span style="color: blue;">Fale conosco </span><br></span>
+                <strong><span class="lk-phone-number"><strong>Dr. Rui - Acessoria Jurídica</strong><br>(14) 99708-3773</span></strong>
+              </div>
             </div>
+          </div>
+      
+          <!-- Horário (Desktop apenas) -->
+          <div class="lk-working-time hide-on-mobile">
+            <i class="far fa-clock lk-contact-icon"></i>
+            <div class="lk-contact-text">
+              <span class="lk-contact-label"><span style="color: blue;">Horário</span> </span>
+              <span class="lk-working-hours"><strong>Seg a Sex: 09h às 18h</strong></span>
+            </div>
+          </div>
         </div>
-    </div>
-</header>
+      </header>
+      
+    
 
     <!-- Banner Principal -->
     <section class="banner">
@@ -588,51 +593,140 @@
     </div>
 </div>
 
+
+<!-- Imóvel 16 - Apartamento INDISPONÍVEL -->
+<div class="imovel-card imovel-indisponivel" 
+     data-id="1"
+     data-tipo="apartamento"
+     data-finalidade="venda"
+     data-cidade="sao-paulo"
+     data-bairro="centro"
+     data-quartos="3"
+     data-banheiros="2"
+     data-vagas="1"
+     data-area="75"
+     data-preco="450000">
+    <div class="imovel-img">
+        <img src="imagens/casa16/494195118_1747692892790970_3246343376358279975_n.jpg" alt="Apartamento com 2 quartos">
+        <span class="tipo indisponivel">Alugado</span>
+        <span class="preco">R$ 2.500</span>
+        <div class="overlay-indisponivel"></div>
+    </div>
+    <div class="imovel-info">
+        <h3>Casa – 4 quartos 3 banheiros </h3>
+        <p><i class="fas fa-map-marker-alt"></i> Botucatu, SP</p>
+        <ul class="caracteristicas">
+            <li><i class="fas fa-bed"></i> <span>4</span> quartos</li>
+                <li><i class="fas fa-bath"></i> <span>3</span> banheiros</li>
+                <li><i class="fas fa-car"></i> <span>2 </span> vaga</li>
+        </ul>
+        <div class="btn-indisponivel">Alugado</div>
+    </div>
+</div>
+
+<!-- Imóvel 17 - Apartamento INDISPONÍVEL -->
+<div class="imovel-card imovel-indisponivel" 
+     data-id="1"
+     data-tipo="apartamento"
+     data-finalidade="venda"
+     data-cidade="sao-paulo"
+     data-bairro="centro"
+     data-quartos="3"
+     data-banheiros="2"
+     data-vagas="1"
+     data-area="75"
+     data-preco="450000">
+    <div class="imovel-img">
+        <img src="imagens/casa17/495500728_1752937112266548_435735634335456604_n.jpg" alt="Apartamento com 2 quartos">
+        <span class="tipo indisponivel">Alugado</span>
+        <span class="preco">R$ 750</span>
+        <div class="overlay-indisponivel"></div>
+    </div>
+    <div class="imovel-info">
+        <h3>Sobrado – 1 quarto 1 banheiro </h3>
+        <p><i class="fas fa-map-marker-alt"></i> Botucatu, SP</p>
+        <ul class="caracteristicas">
+            <li><i class="fas fa-bed"></i> <span>1</span> quartos</li>
+                <li><i class="fas fa-bath"></i> <span>1</span> banheiros</li>
+                <li><i class="fas fa-car"></i> <span>1 </span> vaga</li>
+        </ul>
+        <div class="btn-indisponivel">Alugado</div>
+    </div>
+</div>
+
+<!-- Imóvel 18 - Apartamento INDISPONÍVEL -->
+<div class="imovel-card imovel-indisponivel" 
+     data-id="1"
+     data-tipo="apartamento"
+     data-finalidade="venda"
+     data-cidade="sao-paulo"
+     data-bairro="centro"
+     data-quartos="3"
+     data-banheiros="2"
+     data-vagas="1"
+     data-area="75"
+     data-preco="450000">
+    <div class="imovel-img">
+        <img src="imagens/casa18/484981422_1542716163066627_429621617004823407_n.jpg" alt="Apartamento com 2 quartos">
+        <span class="tipo indisponivel">Alugado</span>
+        <span class="preco">R$ 2.900</span>
+        <div class="overlay-indisponivel"></div>
+    </div>
+    <div class="imovel-info">
+        <h3>Casa – 2 quartos 3 banheiros  </h3>
+        <p><i class="fas fa-map-marker-alt"></i> Botucatu, SP</p>
+        <ul class="caracteristicas">
+            <li><i class="fas fa-bed"></i> <span>2</span> quartos</li>
+                <li><i class="fas fa-bath"></i> <span>3</span> banheiros</li>
+                <li><i class="fas fa-car"></i> <span>3 </span> vaga</li>
+        </ul>
+        <div class="btn-indisponivel">Alugado</div>
+    </div>
+</div>
                 <!-- Adicione mais imóveis conforme necessário -->
             </div>
         </div>
     </section>
 
     <!-- Seção Compra ou Locação -->
-<section class="compra-aluguel">
-    <div class="container">
-        <h2 class="section-title">Seja compra ou locação, podemos te ajudar!</h2>
-        <div class="blocos-container">
-            <!-- Bloco Comprar -->
-            <div class="bloco comprar" onclick="window.location.href='comprar.html'">
-                <div class="bloco-content">
-                    <i class="fas fa-home"></i>
-                    <h3>Comprar Imóvel</h3>
-                    <p>Encontre o imóvel dos seus sonhos para chamar de seu.</p>
-                    <button class="btn-saiba-mais">Saiba Mais</button>
+    <section class="opcoes-busca">
+        <div class="container">
+            <div class="blocos-opcoes">
+                <!-- Bloco Comprar -->
+                <div class="bloco-opcao comprar" data-finalidade="venda">
+                    <div class="bloco-conteudo">
+                        <i class="fas fa-home"></i>
+                        <h3>Comprar Imóvel</h3>
+                        <p>Encontre seu imóvel próprio</p>
+                    </div>
                 </div>
-            </div>
-            
-            <!-- Bloco Alugar -->
-            <div class="bloco alugar" onclick="window.location.href='alugar.html'">
-                <div class="bloco-content">
-                    <i class="fas fa-key"></i>
-                    <h3>Alugar Imóvel</h3>
-                    <p>Encontre o lugar perfeito para morar agora mesmo.</p>
-                    <button class="btn-saiba-mais">Saiba Mais</button>
+                
+                <!-- Bloco Alugar -->
+                <div class="bloco-opcao alugar" data-finalidade="aluguel">
+                    <div class="bloco-conteudo">
+                        <i class="fas fa-key"></i>
+                        <h3>Alugar Imóvel</h3>
+                        <p>Descubra ótimas opções</p>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
+
+
 
     <!-- Rodapé -->
     <footer>
         <div class="container">
             <div class="footer-col">
-                <img src="img/logo.png" alt="LK Imóveis" class="logo-footer">
-                <p>A LK Imóveis está no mercado há mais de 10 anos, ajudando clientes a encontrar o imóvel perfeito.</p>
+                <img src="imagens/logo.png" alt="LK Imóveis" class="logo-footer">
+                <p>A Administração Imobiliária está no mercado há mais de 3 anos, ajudando clientes a encontrar o imóvel perfeito.</p>
             </div>
             <div class="footer-col">
                 <h3>Contato</h3>
-                <p><i class="fas fa-phone"></i> (11) 1234-5678</p>
+                <p><i class="fas fa-phone"></i> (14) 99784-9299</p>
                 <p><i class="fas fa-envelope"></i> contato@imoveislk.com.br</p>
-                <p><i class="fas fa-map-marker-alt"></i> Av. Paulista, 1000 - São Paulo/SP</p>
+                <p><i class="fas fa-map-marker-alt"></i> Rua Cardoso Almeida - 544 - Botucatu/SP</p>
             </div>
             <div class="footer-col">
                 <h3>Links Úteis</h3>
@@ -645,10 +739,14 @@
             </div>
         </div>
         <div class="copyright">
-            <p>&copy; 2025 LK Imóveis - Todos os direitos reservados</p>
+            <p>&copy; 2025 Administração Imobiliária - Todos os direitos reservados</p>
         </div>
     </footer>
 
     <script src="script.js"></script>
+    <!-- Botão do WhatsApp -->
+<a href="https://wa.me/5514997849299" class="whatsapp-float" target="_blank" rel="noopener noreferrer">
+    <i class="fab fa-whatsapp"></i>
+  </a>
 </body>
 </html>

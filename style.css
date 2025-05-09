@@ -436,7 +436,7 @@ footer .container {
 /* Seção Compra ou Locação */
 .compra-aluguel {
     padding: 60px 0;
-    background-color: #f9f9f9;
+    background-color: #ece8e8;
 }
 
 .section-title {
@@ -686,6 +686,11 @@ nav ul li a.active {
     box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
     font-family: 'Montserrat', sans-serif;
     width: 100%;
+    position: static; /* Garante que não seja fixo */
+    top: auto; /* Remove qualquer posicionamento fixo */
+    left: auto;
+    right: auto;
+    z-index: auto;
 }
 
 .lk-container {
@@ -706,9 +711,40 @@ nav ul li a.active {
     transition: all 0.3s ease;
 }
 
+/* ===== ESTILOS GERAIS ===== */
+.lk-header {
+    background-color: #ffffff;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    font-family: 'Montserrat', sans-serif;
+    width: 100%;
+    padding: 20px 0;
+}
+
+.lk-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 40px;
+    gap: 20px;
+}
+
+.lk-logo {
+    flex: 0 0 auto;
+}
+
+.lk-logo-img {
+    height: 70px;
+    width: auto;
+    transition: all 0.3s ease;
+}
+
 .lk-contact-info {
     display: flex;
-    align-items: center;
+    justify-content: center;
+    flex: 1;
+    gap: 40px;
 }
 
 .lk-contact-item {
@@ -717,57 +753,10 @@ nav ul li a.active {
     gap: 12px;
 }
 
-.lk-contact-icon {
-    font-size: 24px;
-    color: #2a5a8a;
-    min-width: 24px;
-    transition: all 0.3s ease;
-}
-
-.lk-contact-text {
-    display: flex;
-    flex-direction: column;
-}
-
-.lk-contact-label {
-    font-weight: 600;
-    color: #2a5a8a;
-    font-size: 15px;
-    letter-spacing: 0.5px;
-}
-
-.lk-phone-numbers {
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
-}
-
-.lk-phone-numbers span {
-    font-weight: 500;
-    font-size: 16px;
-    color: #333;
-}
-
-.lk-working-hours {
-    font-weight: 500;
-    font-size: 15px;
-    color: #555;
-}
-
-/* ===== EFEITOS HOVER ===== */
-.lk-logo-img:hover {
-    transform: scale(1.05);
-}
-
-.lk-contact-item:hover .lk-contact-icon {
-    color: #1a3a5a;
-    transform: scale(1.1);
-}
-
 /* ===== DESKTOP (769px ou mais) ===== */
 @media (min-width: 769px) {
     .lk-header {
-        padding: 20px 0;
+        padding: 10px 0;
     }
     
     .lk-container {
@@ -775,7 +764,7 @@ nav ul li a.active {
     }
     
     .lk-logo-img {
-        height: 70px;
+        height: 130px;
     }
     
     .lk-contact-info {
@@ -783,42 +772,220 @@ nav ul li a.active {
     }
 }
 
-/* ===== MOBILE (768px ou menos) ===== */
+/* ===== MOBILE (768px ou menos) - APENAS A LOGO ===== */
 @media (max-width: 768px) {
     .lk-header {
-        padding: 8px 0;
-        height: 60px;
-    }
-    
-    .lk-container {
-        padding: 0 10px;
-        height: 100%;
+        padding: 15px 0;
+        height: auto;
+        display: flex;
         justify-content: center;
     }
-    
+  
+    .lk-container {
+        padding: 0;
+        width: 100%;
+        max-width: 300px; /* Limita a largura para telas pequenas */
+        justify-content: center;
+    }
+  
     .lk-logo {
         width: 100%;
+        display: flex;
         justify-content: center;
+        margin: 0;
+        padding: 0;
     }
-    
+  
     .lk-logo-img {
+        max-height: 100px;
         height: auto;
-        max-height: 66px;
+        width: auto;
         max-width: 100%;
     }
-    
-    .lk-contact-info {
-        display: none;
+  
+    /* Oculta TODOS os outros elementos no mobile */
+    .lk-contact-info,
+    .lk-contact-item,
+    .lk-contact-icon,
+    .lk-contact-text,
+    .lk-contact-label,
+    .lk-phone-numbers,
+    .lk-working-hours {
+        display: none !important;
     }
 }
 
-/* ===== EXTRA PEQUENO (480px ou menos) ===== */
-@media (max-width: 480px) {
-    .lk-logo-img {
-        max-width: 100%;
+/* ===== EFEITOS HOVER (apenas desktop) ===== */
+@media (hover: hover) and (min-width: 769px) {
+    .lk-logo-img:hover {
+        transform: scale(1.05);
     }
-    
-    .lk-header {
-        height: 80px;
+
+    .lk-contact-item:hover .lk-contact-icon {
+        color: #1a3a5a;
+        transform: scale(1.1);
     }
 }
+/* Estilos para imóvel indisponível */
+.imovel-indisponivel {
+    position: relative;
+    opacity: 0.8;
+}
+
+.imovel-indisponivel .imovel-img {
+    position: relative;
+}
+
+.overlay-indisponivel {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+}
+
+.tipo.indisponivel {
+    background-color: #6c757d;
+    z-index: 2;
+}
+
+.btn-indisponivel {
+    display: block;
+    text-align: center;
+    background-color: #6c757d;
+    color: white;
+    padding: 10px;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: not-allowed;
+}
+
+.imovel-indisponivel .preco {
+    text-decoration: line-through;
+    color: #ccc;
+    z-index: 2;
+}
+
+.imovel-indisponivel h3,
+.imovel-indisponivel p,
+.imovel-indisponivel .caracteristicas {
+    color: #999;
+}
+
+
+/* Seção Opções de Busca */
+.opcoes-busca {
+    padding: 40px 0;
+    background-color: #f5f5f5;
+}
+
+.blocos-opcoes {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.bloco-opcao {
+    border-radius: 10px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.bloco-opcao:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.bloco-conteudo {
+    padding: 30px;
+    text-align: center;
+    color: white;
+}
+
+.bloco-opcao i {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.bloco-opcao h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.bloco-opcao p {
+    font-size: 1rem;
+    opacity: 0.9;
+}
+
+/* Cores específicas */
+.bloco-opcao.comprar {
+    background: linear-gradient(135deg, #0A0601, #E96928);
+}
+
+.bloco-opcao.alugar {
+    background: linear-gradient(135deg, #0A0601, #28a745);
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .blocos-opcoes {
+        grid-template-columns: 1fr;
+    }
+    
+    .bloco-conteudo {
+        padding: 25px;
+    }
+}
+/* Botão Flutuante do WhatsApp */
+.whatsapp-float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 40px;
+    right: 40px;
+    background-color: #25d366;
+    color: #FFF;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+  }
+  
+  .whatsapp-float:hover {
+    background-color: #128C7E;
+    transform: scale(1.1);
+    box-shadow: 0 6px 16px rgba(37, 211, 102, 0.4);
+  }
+  
+  /* Efeito de pulsação */
+  @keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+  }
+  
+  .whatsapp-float {
+    animation: pulse 2s infinite;
+  }
+  
+  /* Responsivo */
+  @media (max-width: 768px) {
+    .whatsapp-float {
+      width: 50px;
+      height: 50px;
+      bottom: 20px;
+      right: 20px;
+      font-size: 25px;
+    }
+  }

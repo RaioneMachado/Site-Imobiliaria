@@ -55,12 +55,18 @@
         .main-image-container {
             width: 70%;
             position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #f9f9f9;
+            border-radius: 8px;
         }
         
         .main-image {
-            width: 100%;
-            height: 500px;
-            object-fit: cover;
+            max-width: 100%;
+            max-height: 500px;
+            width: auto;
+            height: auto;
             border-radius: 8px;
             display: block;
             transition: opacity 0.3s;
@@ -75,13 +81,16 @@
         
         .thumbnail {
             width: 100%;
-            height: 120px;
-            object-fit: cover;
+            height: auto;
+            max-height: 120px;
+            object-fit: contain;
             margin-bottom: 10px;
             border-radius: 5px;
             cursor: pointer;
             display: block;
             transition: all 0.3s;
+            background: #f9f9f9;
+            padding: 5px;
         }
         
         .thumbnail:hover {
@@ -136,7 +145,7 @@
         
         .whatsapp-btn {
             display: inline-block;
-            background-color: #0A0601;
+            background: linear-gradient(135deg, #25D366, #128C7E);
             color: white;
             padding: 15px 30px;
             border-radius: 50px;
@@ -145,12 +154,15 @@
             font-size: 18px;
             margin-top: 15px;
             transition: all 0.3s;
+            box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+            border: none;
+            cursor: pointer;
         }
         
         .whatsapp-btn:hover {
-            background-color: #0A0601;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(10,6,1,0.1);
+            background: linear-gradient(135deg, #128C7E, #25D366);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 16px rgba(37, 211, 102, 0.4);
         }
         
         .whatsapp-btn i {
@@ -171,6 +183,15 @@
                 width: 100%;
             }
             
+            .main-image-container {
+                height: auto;
+                min-height: 300px;
+            }
+            
+            .main-image {
+                max-height: 400px;
+            }
+            
             .thumbnails {
                 display: flex;
                 overflow-x: auto;
@@ -185,10 +206,7 @@
                 margin-right: 10px;
                 margin-bottom: 0;
                 flex-shrink: 0;
-            }
-            
-            .main-image {
-                height: 350px;
+                object-fit: contain;
             }
         }
     </style>
@@ -247,7 +265,7 @@
         <h2>Entrar em Contato</h2>
         <p>Interessado neste imóvel? Entre em contato conosco!</p>
         <a href="https://wa.me/5514997849299" class="whatsapp-btn">
-            <i class="fab fa-whatsapp"></i> WhatsApp: (14) 99784-9299
+            <i class="fab fa-whatsapp"></i> WhatsApp
         </a>
         <p style="margin-top: 15px; font-size: 16px;">Clique no botão acima para conversar diretamente pelo WhatsApp</p>
     </div>
