@@ -88,7 +88,7 @@ function loadImovelDetails() {
             tipo: 'Venda',
             preco: 'R$ 600.000',
             localizacao: 'Centro, São Paulo - SP',
-            quartos: 2,
+            quartos: 3,
             banheiros: 2,
             vagas: 1,
             area: '75m²',

@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes do Imóvel | Sua Imobiliária</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        /* Reset e estilos básicos */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Cabeçalho */
+        header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 20px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        
+        /* Conteúdo principal */
+        .imovel-detalhes {
+            padding: 40px 0;
+        }
+        
+        .imovel-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .imovel-titulo h1 {
+            font-size: 28px;
+            color: #2c3e50;
+        }
+        
+        .imovel-localizacao {
+            color: #7f8c8d;
+            margin: 10px 0;
+        }
+        
+        .imovel-preco {
+            font-size: 24px;
+            font-weight: bold;
+            color: #e74c3c;
+        }
+        
+        .imovel-tipo {
+            display: inline-block;
+            padding: 5px 10px;
+            background-color: #3498db;
+            color: white;
+            border-radius: 3px;
+            font-size: 14px;
+            margin-left: 10px;
+        }
+        
+        /* Galeria de imagens */
+        .imovel-galeria {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        
+        .imagem-principal {
+            grid-column: span 2;
+            grid-row: span 2;
+        }
+        
+        .imovel-galeria img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 5px;
+            transition: transform 0.3s;
+            cursor: pointer;
+        }
+        
+        .imovel-galeria img:hover {
+            transform: scale(1.02);
+        }
+        
+        /* Características */
+        .imovel-caracteristicas {
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+        }
+        
+        .caracteristicas-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 15px;
+        }
+        
+        .caracteristica-item {
+            display: flex;
+            align-items: center;
+        }
+        
+        .caracteristica-item i {
+            margin-right: 10px;
+            color: #3498db;
+        }
+        
+        /* Descrição */
+        .imovel-descricao {
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+        }
+        
+        .imovel-descricao h2 {
+            margin-bottom: 15px;
+            color: #2c3e50;
+        }
+        
+        /* Formulário de contato */
+        .contato-form {
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+        
+        .contato-form h2 {
+            margin-bottom: 15px;
+            color: #2c3e50;
+        }
+        
+        .form-group {
+            margin-bottom: 15px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 3px;
+        }
+        
+        .btn-enviar {
+            background-color: #e74c3c;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 3px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        
+        .btn-enviar:hover {
+            background-color: #c0392b;
+        }
+        
+        /* Rodapé */
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 40px;
+        }
+        
+        @media (max-width: 768px) {
+            .imovel-galeria {
+                grid-template-columns: 1fr;
+            }
+            
+            .imagem-principal {
+                grid-column: span 1;
+                grid-row: span 1;
+            }
+            
+            .imovel-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .imovel-preco {
+                margin-top: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">Sua Imobiliária</div>
+        </div>
+    </header>
+    
+    <main class="container">
+        <section class="imovel-detalhes">
+            <div class="imovel-header">
+                <div class="imovel-titulo">
+                    <h1 id="imovel-titulo">Casa 3 quartos e 3 banheiros</h1>
+                    <p class="imovel-localizacao" id="imovel-localizacao"><i class="fas fa-map-marker-alt"></i> Centro, São Paulo - SP</p>
+                </div>
+                <div>
+                    <span class="imovel-preco" id="imovel-preco">R$ 600.000</span>
+                    <span class="imovel-tipo" id="imovel-tipo">Venda</span>
+                </div>
+            </div>
+            
+            <div class="imovel-galeria">
+                <div class="imagem-principal">
+                    <img src="imagens/casa1/capa.jpg.jpg" alt="Imóvel" id="imagem-principal">
+                </div>
+                <div>
+                    <img src="../../imagens/casa1/foto1.jpg" alt="Imóvel">
+                </div>
+                <div>
+                    <img src="../../imagens/casa1/foto2.jpg" alt="Imóvel">
+                </div>
+                <div>
+                    <img src="../../imagens/casa1/foto3.jpg" alt="Imóvel">
+                </div>
+                <div>
+                    <img src="../../imagens/casa1/foto4.jpg" alt="Imóvel">
+                </div>
+            </div>
+            
+            <div class="imovel-caracteristicas">
+                <h2>Características</h2>
+                <div class="caracteristicas-grid">
+                    <div class="caracteristica-item">
+                        <i class="fas fa-bed"></i>
+                        <span><strong id="quartos">3</strong> quartos</span>
+                    </div>
+                    <div class="caracteristica-item">
+                        <i class="fas fa-bath"></i>
+                        <span><strong id="banheiros">3</strong> banheiros</span>
+                    </div>
+                    <div class="caracteristica-item">
+                        <i class="fas fa-car"></i>
+                        <span><strong id="vagas">1</strong> vaga</span>
+                    </div>
+                    <div class="caracteristica-item">
+                        <i class="fas fa-vector-square"></i>
+                        <span><strong id="area">75</strong> m²</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="imovel-descricao">
+                <h2>Descrição</h2>
+                <p id="imovel-descricao">
+                    Excelente apartamento localizado no coração de São Paulo, no bairro do Centro. Imóvel com 2 quartos sendo 1 suíte, 2 banheiros, 1 vaga de garagem e 75m² de área total. Apartamento bem iluminado, com piso em porcelanato, armários planejados na cozinha e no quarto, sacada gourmet. Próximo a estações de metrô, shoppings, restaurantes e comércio em geral. Condomínio com piscina, salão de festas, academia e portaria 24h.
+                </p>
+            </div>
+            
+            <div class="contato-form">
+                <h2>Interessado no imóvel?</h2>
+                <form id="form-contato">
+                    <div class="form-group">
+                        <label for="nome">Nome</label>
+                        <input type="text" id="nome" name="nome" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">E-mail</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="telefone">Telefone</label>
+                        <input type="tel" id="telefone" name="telefone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="mensagem">Mensagem</label>
+                        <textarea id="mensagem" name="mensagem" rows="4" required>Gostaria de mais informações sobre este imóvel.</textarea>
+                    </div>
+                    <button type="submit" class="btn-enviar">Enviar Mensagem</button>
+                </form>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Sua Imobiliária. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Função para obter parâmetros da URL
+        function getParameterByName(name, url = window.location.href) {
+            name = name.replace(/[\[\]]/g, '\\$&');
+            const regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)');
+            const results = regex.exec(url);
+            if (!results) return null;
+            if (!results[2]) return '';
+            return decodeURIComponent(results[2].replace(/\+/g, ' '));
+        }
+
+        // Obter o ID do imóvel da URL
+        const imovelId = getParameterByName('id');
+
+        // Simulação de banco de dados de imóveis (você deve substituir por uma chamada AJAX/API real)
+        const imoveis = [
+            {
+                id: "1",
+                titulo: "Casa 3 quartos e 3 banheiros",
+                tipo: "apartamento",
+                finalidade: "venda",
+                cidade: "sao-paulo",
+                bairro: "centro",
+                quartos: 3,
+                banheiros: 3,
+                vagas: 1,
+                area: 75,
+                preco: 600000,
+                descricao: "Excelente apartamento localizado no coração de São Paulo, no bairro do Centro. Imóvel com 3 quartos sendo 1 suíte, 3 banheiros, 1 vaga de garagem e 75m² de área total. Apartamento bem iluminado, com piso em porcelanato, armários planejados na cozinha e no quarto, sacada gourmet. Próximo a estações de metrô, shoppings, restaurantes e comércio em geral. Condomínio com piscina, salão de festas, academia e portaria 24h.",
+                imagens: [
+                    "../../imagens/casa1/capa.jpg.jpg",
+                    "../../imagens/casa1/foto1.jpg",
+                    "../../imagens/casa1/foto2.jpg",
+                    "../../imagens/casa1/foto3.jpg",
+                    "../../imagens/casa1/foto4.jpg"
+                ]
+            },
+            // Adicione mais imóveis conforme necessário
+        ];
+
+        // Encontrar o imóvel pelo ID
+        const imovel = imoveis.find(item => item.id === imovelId);
+
+        // Se encontrou o imóvel, preencher os dados
+        if (imovel) {
+            document.getElementById('imovel-titulo').textContent = imovel.titulo;
+            document.getElementById('imovel-localizacao').innerHTML = `<i class="fas fa-map-marker-alt"></i> ${imovel.bairro.charAt(0).toUpperCase() + imovel.bairro.slice(1)}, ${imovel.cidade.replace('-', ' ').split(' ').map(s => s.charAt(0).toUpperCase() + s.slice(1)).join(' ')} - SP`;
+            document.getElementById('imovel-preco').textContent = `R$ ${imovel.preco.toLocaleString('pt-BR')}`;
+            document.getElementById('imovel-tipo').textContent = imovel.finalidade === 'venda' ? 'Venda' : 'Aluguel';
+            document.getElementById('quartos').textContent = imovel.quartos;
+            document.getElementById('banheiros').textContent = imovel.banheiros;
+            document.getElementById('vagas').textContent = imovel.vagas;
+            document.getElementById('area').textContent = imovel.area;
+            document.getElementById('imovel-descricao').textContent = imovel.descricao;
+            document.getElementById('imagem-principal').src = imovel.imagens[0];
+            
+            // Preencher o formulário com o ID do imóvel
+            const form = document.getElementById('form-contato');
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Aqui você pode adicionar o código para enviar o formulário
+                alert('Mensagem enviada com sucesso! Entraremos em contato em breve.');
+                form.reset();
+            });
+        } else {
+            // Imóvel não encontrado
+            document.querySelector('.imovel-detalhes').innerHTML = `
+                <div style="text-align: center; padding: 50px;">
+                    <h2>Imóvel não encontrado</h2>
+                    <p>O imóvel solicitado não está disponível ou não existe.</p>
+                    <a href="../index.html" style="color: #3498db;">Voltar para a página inicial</a>
+                </div>
+            `;
+        }
+    </script>
+</body>
+</html>

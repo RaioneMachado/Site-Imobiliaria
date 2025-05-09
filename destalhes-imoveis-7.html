@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Casa 3 Quartos - Centro, São Paulo</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        body {
+            line-height: 1.6;
+            color: #0A0601;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .imovel-header {
+            margin-bottom: 30px;
+            border-bottom: 1px solid #0A0601;
+            padding-bottom: 20px;
+        }
+        
+        .imovel-titulo {
+            font-size: 28px;
+            color: #0A0601;
+            margin-bottom: 10px;
+        }
+        
+        .imovel-localizacao {
+            color: #0A0601;
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+        
+        .imovel-preco {
+            color: #0A0601;
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        
+        .gallery-container {
+            display: flex;
+            margin-bottom: 40px;
+            position: relative;
+        }
+        
+        .main-image-container {
+            width: 70%;
+            position: relative;
+        }
+        
+        .main-image {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            border-radius: 8px;
+            display: block;
+            transition: opacity 0.3s;
+        }
+        
+        .thumbnails {
+            width: 30%;
+            padding-left: 15px;
+            overflow-y: auto;
+            max-height: 500px;
+        }
+        
+        .thumbnail {
+            width: 100%;
+            height: 120px;
+            object-fit: cover;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            display: block;
+            transition: all 0.3s;
+        }
+        
+        .thumbnail:hover {
+            transform: scale(1.02);
+            box-shadow: 0 4px 8px rgba(10,6,1,0.1);
+        }
+        
+        .thumbnail.active {
+            border: 3px solid #0A0601;
+            transform: scale(1.03);
+        }
+        
+        .imovel-info {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .imovel-descricao {
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+        
+        .imovel-caracteristicas {
+            list-style: none;
+        }
+        
+        .imovel-caracteristicas li {
+            margin-bottom: 10px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #0A0601;
+        }
+        
+        .imovel-caracteristicas strong {
+            color: #0A0601;
+        }
+        
+        .detalhes-lista {
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+        }
+        
+        .contato-section {
+            margin-top: 40px;
+            padding: 30px;
+            background-color: #f5f5f5;
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        .whatsapp-btn {
+            display: inline-block;
+            background-color: #0A0601;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 18px;
+            margin-top: 15px;
+            transition: all 0.3s;
+        }
+        
+        .whatsapp-btn:hover {
+            background-color: #0A0601;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(10,6,1,0.1);
+        }
+        
+        .whatsapp-btn i {
+            margin-right: 10px;
+            font-size: 20px;
+        }
+        
+        @media (max-width: 768px) {
+            .imovel-info {
+                grid-template-columns: 1fr;
+            }
+            
+            .gallery-container {
+                flex-direction: column;
+            }
+            
+            .main-image-container, .thumbnails {
+                width: 100%;
+            }
+            
+            .thumbnails {
+                display: flex;
+                overflow-x: auto;
+                padding-left: 0;
+                padding-top: 15px;
+                max-height: none;
+            }
+            
+            .thumbnail {
+                width: 100px;
+                height: 80px;
+                margin-right: 10px;
+                margin-bottom: 0;
+                flex-shrink: 0;
+            }
+            
+            .main-image {
+                height: 350px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="imovel-header">
+        <h1 class="imovel-titulo">Casa 2 quartos e 1 banheiro </h1>
+        <p class="imovel-localizacao"><i class="fas fa-map-marker-alt"></i> 
+            Botucatu, SP</p>
+        <p class="imovel-preco">R$ 4.500</p>
+    </div>
+    
+    <div class="gallery-container">
+        <div class="main-image-container">
+            <img id="mainImage" src="imagens/casa7/2.jpg" alt="Fachada da casa" class="main-image">
+        </div>
+        
+        <div class="thumbnails">
+            <img src="imagens/casa7/1.jpg" alt="Fachada" class="thumbnail active">
+            <img src="imagens/casa7/2.jpg" alt="Sala de estar" class="thumbnail">
+            <img src="imagens/casa7/3.jpg" alt="Cozinha" class="thumbnail">
+        </div>
+    </div>
+
+    <div class="imovel-info">
+        <div class="imovel-detalhes">
+            <h2>Descrição do Imóvel</h2>
+            <p class="imovel-descricao">
+                <strong>
+                    🏡 Oportunidade Salão Comercial  localização privilegiada
+                    
+                           🌟 Venda ou Locação aceita Permuta com imóvel menor Valor 🌟
+                    ✨ Localização: Próximo à Igreja, Padaria, Ponto de Ônibus, Farmácia Comercio, Faculdade, Escolas e no coração da cidade!
+                </strong>
+            </p>
+            
+            <h2>🛋️ Características do Imóvel Principal:</h2>
+            <ul class="imovel-caracteristicas">
+                <li>Área Construída  105m²</li>
+                <li>Escritorio 🗄️🗄️</li>
+                <li>Cozinha  🍽️</li>
+                <li>Banheiro 🚽</li>
+            </ul>
+            <p>
+                <strong>
+                    Valor do Aluguel: 4,500
+                    🔑 tudo isso em um só lugar! Perfeito para quem busca qualidade de vida, comodidade e a melhor localização da cidade.
+                    Agende sua visita e venha conhecer pessoalmente!
+                </strong>
+            </p>
+        </div>
+        
+    </div>
+    
+    <div class="contato-section">
+        <h2>Entrar em Contato</h2>
+        <p>Interessado neste imóvel? Entre em contato conosco!</p>
+        <a href="https://wa.me/5514997849299" class="whatsapp-btn">
+            <i class="fab fa-whatsapp"></i> WhatsApp: (14) 99784-9299
+        </a>
+        <p style="margin-top: 15px; font-size: 16px;">Clique no botão acima para conversar diretamente pelo WhatsApp</p>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const thumbnails = document.querySelectorAll('.thumbnail');
+            const mainImage = document.getElementById('mainImage');
+        
+            thumbnails.forEach(thumbnail => {
+                thumbnail.addEventListener('click', () => {
+                    // Atualiza a imagem principal com o src da miniatura clicada
+                    mainImage.src = thumbnail.src;
+                    
+                    // Remove a classe 'active' de todas as miniaturas
+                    thumbnails.forEach(t => t.classList.remove('active'));
+                    
+                    // Adiciona a classe 'active' apenas na miniatura clicada
+                    thumbnail.classList.add('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>

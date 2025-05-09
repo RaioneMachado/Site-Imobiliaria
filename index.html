@@ -6,37 +6,54 @@
     <title>LK Imóveis - Compra e Aluguel de Imóveis</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+
 </head>
 <body>
-    <!-- Cabeçalho -->
-    <header>
-        <div class="container">
-            <div class="logo">
-                <a href="index.html">
-                    <img src="img/logo.png" alt="LK Imóveis">
-                </a>
+<!-- Cabeçalho Elegante -->
+<header class="lk-header">
+    <div class="lk-container">
+        <div class="lk-logo">
+            <a href="index.html">
+                <img src="imagens/logo.png" alt="LK Imóveis" class="lk-logo-img">
+            </a>
+        </div>
+        
+        <div class="lk-contact-info">
+            <div class="lk-contact-item">
+                <div class="lk-contact-icon">
+                    <i class="fas fa-phone-alt"></i>
+                </div>
+                <div class="lk-contact-text">
+                    <span class="lk-contact-label">Fale conosco</span>
+                    <div class="lk-phone-numbers">
+                        <span>(14) 99784-9297</span>
+                      
+                        <span>(14) 99708-3773</span>
+                    </div>
+                </div>
             </div>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="comprar.html">Comprar</a></li> <!-- Link corrigido -->
-                    <li><a href="alugar.html">Alugar</a></li>
-                    <li><a href="#">Lançamentos</a></li>
-                    <li><a href="#">Contato</a></li>
-                </ul>
-            </nav>
-            <div class="menu-mobile">
-                <i class="fas fa-bars"></i>
+            
+            <div class="lk-contact-item">
+                <div class="lk-contact-icon">
+                    <i class="far fa-clock"></i>
+                </div>
+                <div class="lk-contact-text">
+                    <span class="lk-contact-label">Horário de atendimento</span>
+                    <span>Seg a Sex das 09hrs às 18hrs</span>
+                </div>
             </div>
         </div>
-    </header>
+    </div>
+</header>
 
     <!-- Banner Principal -->
     <section class="banner">
         <img src="imagens/pexels-lalesh-242827.jpg" alt="Encontre o imóvel dos seus sonhos">
         <div class="overlay">
             <h1>ENCONTRE SEU IMÓVEL</h1>
-            <p>Encontre o imóvel dos seus sonhos conosco!</p>
+            <p><span style="color: #E96928;">Casas - Apartamentos - Comerciais</span></p>
         </div>
     </section>
     <section class="search-bar">
@@ -76,94 +93,501 @@
     <div class="container">
         <h2 class="section-title">Imóveis em Destaque</h2>
         <div class="grid-imoveis">
-            <!-- Imóvel 1 - Apartamento à Venda -->
-            <div class="imovel-card" 
-                 data-id="1"
-                 data-tipo="apartamento"
-                 data-finalidade="venda"
-                 data-cidade="sao-paulo"
-                 data-bairro="centro"
-                 data-quartos="2"
-                 data-banheiros="2"
-                 data-vagas="1"
-                 data-area="75"
-                 data-preco="450000">
-                <div class="imovel-img">
-                    <img src="imagens/casa1/capa.jpg.jpg" alt="Apartamento com 2 quartos">
-                    <span class="tipo">Venda</span>
-                    <span class="preco">R$ 600.000</span>
-                </div>
-                <div class="imovel-info">
-                    <h3>Casa 3 quartos e 3 banheiros</h3>
-                    <p><i class="fas fa-map-marker-alt"></i> Centro, São Paulo - SP</p>
-                    <ul class="caracteristicas">
-                        <li><i class="fas fa-bed"></i> <span>2</span> quartos</li>
-                        <li><i class="fas fa-bath"></i> <span>2</span> banheiros</li>
-                        <li><i class="fas fa-car"></i> <span>1</span> vaga</li>
-                        <li><i class="fas fa-vector-square"></i> <span>75</span>m²</li>
-                    </ul>
-                    <a href="pages/detalhes-imovel.html?id=1" class="btn-detalhes">Ver Detalhes</a>
-                </div>
-            </div>
-
-            <!-- Imóvel 2 - Casa para Alugar -->
-            <div class="imovel-card" 
-                 data-id="2"
-                 data-tipo="casa"
-                 data-finalidade="aluguel"
-                 data-cidade="rio-de-janeiro"
-                 data-bairro="barra"
-                 data-quartos="3"
-                 data-banheiros="2"
-                 data-vagas="2"
-                 data-area="120"
-                 data-preco="2500">
-                <div class="imovel-img">
-                    <img src="img/imovel2.jpg" alt="Casa com 3 quartos">
-                    <span class="tipo aluguel">Aluguel</span>
-                    <span class="preco">R$ 2.500/mês</span>
-                </div>
-                <div class="imovel-info">
-                    <h3>Casa 3 quartos</h3>
-                    <p><i class="fas fa-map-marker-alt"></i> Barra, Rio de Janeiro - RJ</p>
-                    <ul class="caracteristicas">
-                        <li><i class="fas fa-bed"></i> <span>3</span> quartos</li>
-                        <li><i class="fas fa-bath"></i> <span>2</span> banheiros</li>
-                        <li><i class="fas fa-car"></i> <span>2</span> vagas</li>
-                        <li><i class="fas fa-vector-square"></i> <span>120</span>m²</li>
-                    </ul>
-                    <a href="pages/detalhes-imovel.html?id=2" class="btn-detalhes">Ver Detalhes</a>
-                </div>
-            </div>
-
-            <!-- Imóvel 3 - Terreno à Venda -->
-            <div class="imovel-card" 
-                 data-id="3"
-                 data-tipo="terreno"
-                 data-finalidade="venda"
-                 data-cidade="belo-horizonte"
-                 data-bairro="savassi"
-                 data-area="300"
-                 data-preco="350000">
-                <div class="imovel-img">
-                    <img src="img/imovel3.jpg" alt="Terreno em Savassi">
-                    <span class="tipo">Venda</span>
-                    <span class="preco">R$ 350.000</span>
-                </div>
-                <div class="imovel-info">
-                    <h3>Terreno comercial</h3>
-                    <p><i class="fas fa-map-marker-alt"></i> Savassi, Belo Horizonte - MG</p>
-                    <ul class="caracteristicas">
-                        <li><i class="fas fa-vector-square"></i> <span>300</span>m²</li>
-                        <li><i class="fas fa-map-marked-alt"></i> Zona comercial</li>
-                        <li><i class="fas fa-building"></i> Permissão para 5 pavimentos</li>
-                    </ul>
-                    <a href="pages/detalhes-imovel.html?id=3" class="btn-detalhes">Ver Detalhes</a>
-                </div>
-            </div>
+            
+<!-- Imóvel 1 - Apartamento à Venda -->
+<div class="imovel-card" 
+     data-id="1"
+     data-tipo="casa"
+     data-finalidade="venda"
+     data-cidade="sao-paulo"
+     data-bairro="centro"
+     data-quartos="3"
+     data-banheiros="2"
+     data-vagas="1"
+     data-area="75"
+     data-preco="450000">
+    <a href="detalhes-imovel-1.html" class="imovel-img-link">
+        <div class="imovel-img">
+            <img src="imagens/casa1/foto 2.jpg" alt="Apartamento com 2 quartos">
+            <span class="tipo">Venda</span>
+            <span class="preco">R$ 600.000</span>
         </div>
+    </a>
+    <div class="imovel-info">
+        <a href="detalhes-imovel-1.html" class="imovel-info-link">
+            <h3>Casa 3 quartos e 3 banheiros + ponto comercial</h3>
+            <p><i class="fas fa-map-marker-alt"></i> Botucatu, SP</p>
+            <ul class="caracteristicas">
+                <li><i class="fas fa-bed"></i> <span>3</span> quartos</li>
+                <li><i class="fas fa-bath"></i> <span>3</span> banheiros</li>
+                <li><i class="fas fa-car"></i> <span>2</span> vaga</li>
+                
+            </ul>
+        </a>
+        <a href="detalhes-imovel-1.html" class="btn-detalhes">Ver Detalhes</a>
     </div>
-</section>
+</div>
+
+<!-- Imóvel 2 - Apartamento à Venda -->
+<div class="imovel-card" 
+     data-id="1"
+     data-tipo="casa"
+     data-finalidade="casa"
+     data-cidade="sao-paulo"
+     data-bairro="centro"
+     data-quartos="2"
+     data-banheiros="2"
+     data-vagas="1"
+     data-area="75"
+     data-preco="2500">
+    <a href="detalhes-imovel-2.html" class="imovel-img-link">
+        <div class="imovel-img">
+            <img src="imagens/casa2/capa.jpg" alt="Apartamento com 2 quartos">
+            <span class="tipo">Aluguel</span>
+            <span class="preco">R$ 2.500</span>
+        </div>
+    </a>
+    <div class="imovel-info">
+        <a href="detalhes-imovel-2.html" class="imovel-info-link">
+            <h3>Casa 3 quartos e 2 banheiros </h3>
+            <p><i class="fas fa-map-marker-alt"></i> Botucatu, SP</p>
+            <ul class="caracteristicas">
+                <li><i class="fas fa-bed"></i> <span>3</span> quartos</li>
+                <li><i class="fas fa-bath"></i> <span>2</span> banheiros</li>
+                <li><i class="fas fa-car"></i> <span>2 a 3</span> vaga</li>
+                
+            </ul>
+        </a>
+        <a href="detalhes-imovel-2.html" class="btn-detalhes">Ver Detalhes</a>
+    </div>
+</div>
+
+<!-- Imóvel 3 - Apartamento à Venda -->
+<div class="imovel-card" 
+     data-id="1"
+     data-tipo="casa"
+     data-finalidade="venda"
+     data-cidade="sao-paulo"
+     data-bairro="centro"
+     data-quartos="2"
+     data-banheiros="2"
+     data-vagas="1"
+     data-area="75"
+     data-preco="450000">
+    <a href="detalhes-imovel-3.html" class="imovel-img-link">
+        <div class="imovel-img">
+            <img src="imagens/casa3/6.jpg" alt="Apartamento com 2 quartos">
+            <span class="tipo">Venda</span>
+            <span class="preco">R$ 350.000</span>
+        </div>
+    </a>
+    <div class="imovel-info">
+        <a href="detalhes-imovel-3.html" class="imovel-info-link">
+            <h3>Casa 3 quartos e 1 banheiro</h3>
+            <p><i class="fas fa-map-marker-alt"></i> Botucatu, SP</p>
+            <ul class="caracteristicas">
+                <li><i class="fas fa-bed"></i> <span>2</span> quartos</li>
+                <li><i class="fas fa-bath"></i> <span>2</span> banheiros</li>
+                <li><i class="fas fa-car"></i> <span>1</span> vaga</li>
+                <li><i class="fas fa-vector-square"></i> <span>75</span>m²</li>
+            </ul>
+        </a>
+        <a href="detalhes-imovel-3.html" class="btn-detalhes">Ver Detalhes</a>
+    </div>
+</div>
+
+<!-- Imóvel 4 - Apartamento à Venda -->
+<div class="imovel-card" 
+     data-id="1"
+     data-tipo="casa"
+     data-finalidade="venda"
+     data-cidade="sao-paulo"
+     data-bairro="centro"
+     data-quartos="2"
+     data-banheiros="2"
+     data-vagas="1"
+     data-area="75"
+     data-preco="450000">
+    <a href="detalhes-imoveis-4.html" class="imovel-img-link">
+        <div class="imovel-img">
+            <img src="imagens/casa4/1.jpg" alt="Apartamento com 2 quartos">
+            <span class="tipo">Venda</span>
+            <span class="preco">R$ 55.000 + parcelas</span>
+        </div>
+    </a>
+    <div class="imovel-info">
+        <a href="detalhes-imoveis-4.html" class="imovel-info-link">
+            <h3>Apartamento 2 quartos e 1 banheiro </h3>
+            <p><i class="fas fa-map-marker-alt"></i> Botucatu, SP</p>
+            <ul class="caracteristicas">
+                <li><i class="fas fa-bed"></i> <span>2</span> quartos</li>
+                <li><i class="fas fa-bath"></i> <span>1</span> banheiro</li>
+       
+            </ul>
+        </a>
+        <a href="detalhes-imoveis-4.html" class="btn-detalhes">Ver Detalhes</a>
+    </div>
+</div>
+
+<!-- Imóvel 5 - Apartamento à Venda -->
+<div class="imovel-card" 
+     data-id="1"
+     data-tipo="casa"
+     data-finalidade="Aluguel"
+     data-cidade="sao-paulo"
+     data-bairro="centro"
+     data-quartos="2"
+     data-banheiros="2"
+     data-vagas="1"
+     data-area="75"
+     data-preco="450000">
+    <a href="detalhes-imoveis-5.html" class="imovel-img-link">
+        <div class="imovel-img">
+            <img src="imagens/casa5/3.jpg" alt="Apartamento com 2 quartos">
+            <span class="tipo">Aluguel</span>
+            <span class="preco">R$ 1.700</span>
+        </div>
+    </a>
+    <div class="imovel-info">
+        <a href="detalhes-imovCasa 3 quartos e 1 banheiroel-3.html" class="imovel-info-link">
+            <h3> Casa Estúdio com 2 banheiros</h3>
+            <p><i class="fas fa-map-marker-alt"></i> Botucatu, SP</p>
+            <ul class="caracteristicas">
+                <li><i class="fas fa-bath"></i> <span>2</span> banheiros</li>
+                <li><i class="fas fa-vector-square"></i> <span>200</span>m²</li>
+            </ul>
+        </a>
+        <a href="detalhes-imoveis-5.html" class="btn-detalhes">Ver Detalhes</a>
+    </div>
+</div>
+
+<!-- Imóvel 6 - Apartamento à Venda -->
+<div class="imovel-card" 
+     data-id="1"
+     data-tipo="casa"
+     data-finalidade="aluguel"
+     data-cidade="sao-paulo"
+     data-bairro="centro"
+     data-quartos="2"
+     data-banheiros="2"
+     data-vagas="1"
+     data-area="75"
+     data-preco="450000">
+    <a href="detalhes-imoveis-6.html" class="imovel-img-link">
+        <div class="imovel-img">
+            <img src="imagens/casa6/5.jpg" alt="Apartamento com 2 quartos">
+            <span class="tipo">Aluguel</span>
+            <span class="preco">R$ 3.500</span>
+        </div>
+    </a>
+    <div class="imovel-info">
+        <a href="detalhes-imoveis-6.html" class="imovel-info-link">
+            <h3>Casa Estúdio com 2 banheiros</h3>
+            <p><i class="fas fa-map-marker-alt"></i> Botucatu, SP</p>
+            <ul class="caracteristicas">
+                <li><i class="fas fa-bath"></i> <span>2</span> banheiros</li>
+                <li><i class="fas fa-vector-square"></i> <span>220</span>m²</li>
+            </ul>
+        </a>
+        <a href="detalhes-imoveis-6.html" class="btn-detalhes">Ver Detalhes</a>
+    </div>
+</div>
+
+<!-- Imóvel 7 - Apartamento à Venda -->
+<div class="imovel-card" 
+     data-id="1"
+     data-tipo="casa"
+     data-finalidade="aluguel"
+     data-cidade="sao-paulo"
+     data-bairro="centro"
+     data-quartos="2"
+     data-banheiros="2"
+     data-vagas="1"
+     data-area="75"
+     data-preco="450000">
+    <a href="destalhes-imoveis-7.html" class="imovel-img-link">
+        <div class="imovel-img">
+            <img src="imagens/casa7/2.jpg" alt="Apartamento com 2 quartos">
+            <span class="tipo">Aluguel</span>
+            <span class="preco">R$ 4.500</span>
+        </div>
+    </a>
+    <div class="imovel-info">
+        <a href="destalhes-imoveis-7.html" class="imovel-info-link">
+            <h3>Casa 2 quartos e 1 banheiro </h3>
+            <p><i class="fas fa-map-marker-alt"></i> Botucatu, SP</p>
+            <ul class="caracteristicas">
+                <li><i class="fas fa-bath"></i> <span>1</span> banheiro</li>
+                <li><i class="fas fa-vector-square"></i> <span>105</span>m²</li>
+            </ul>
+        </a>
+        <a href="destalhes-imoveis-7.html" class="btn-detalhes">Ver Detalhes</a>
+    </div>
+</div>
+
+<!-- Imóvel 8 - Apartamento à Venda -->
+<div class="imovel-card" 
+     data-id="1"
+     data-tipo="apartamento"
+     data-finalidade="aluguel"
+     data-cidade="sao-paulo"
+     data-bairro="centro"
+     data-quartos="2"
+     data-banheiros="2"
+     data-vagas="1"
+     data-area="75"
+     data-preco="450000">
+    <a href="detalhes-imoveis-8.html" class="imovel-img-link">
+        <div class="imovel-img">
+            <img src="imagens/casa8/30.jpg" alt="Apartamento com 2 quartos">
+            <span class="tipo">Aluguel</span>
+            <span class="preco">R$ 2.800</span>
+        </div>
+    </a>
+    <div class="imovel-info">
+        <a href="detalhes-imoveis-8.html" class="imovel-info-link">
+            <h3>
+                Sobrado – 4 quartos e 3 banheiros </h3>
+            <p><i class="fas fa-map-marker-alt"></i> Botucatu, SP</p>
+            <ul class="caracteristicas">
+                <li><i class="fas fa-bed"></i> <span>4</span> quartos</li>
+                <li><i class="fas fa-bath"></i> <span>3</span> banheiros</li>
+                <li><i class="fas fa-car"></i> <span>2</span> vaga</li>
+            </ul>
+        </a>
+        <a href="detalhes-imoveis-8.html" class="btn-detalhes">Ver Detalhes</a>
+    </div>
+</div>
+
+<!-- Imóvel 9 - Apartamento à Venda -->
+<div class="imovel-card" 
+     data-id="1"
+     data-tipo="casa"
+     data-finalidade="venda"
+     data-cidade="sao-paulo"
+     data-bairro="centro"
+     data-quartos="2"
+     data-banheiros="2"
+     data-vagas="1"
+     data-area="75"
+     data-preco="450000">
+    <a href="destalhes-imoveis-9.html" class="imovel-img-link">
+        <div class="imovel-img">
+            <img src="imagens/casa9/17.jpg" alt="Apartamento com 2 quartos">
+            <span class="tipo">Venda</span>
+            <span class="preco">R$ 1.700.000</span>
+        </div>
+    </a>
+    <div class="imovel-info">
+        <a href="destalhes-imoveis-9.html" class="imovel-info-link">
+            <h3>Casa – 6 quartos e 4 banheiros  </h3>
+            <p><i class="fas fa-map-marker-alt"></i> Botucatu, SP</p>
+            <ul class="caracteristicas">
+                <li><i class="fas fa-bed"></i> <span>6</span> quartos</li>
+                <li><i class="fas fa-bath"></i> <span>4</span> banheiros</li>
+                <li><i class="fas fa-car"></i> <span>2</span> vaga</li>
+            </ul>
+        </a>
+        <a href="destalhes-imoveis-9.html" class="btn-detalhes">Ver Detalhes</a>
+    </div>
+</div>
+
+<!-- Imóvel 10 - Apartamento à Venda -->
+<div class="imovel-card" 
+     data-id="1"
+     data-tipo="casa"
+     data-finalidade="venda"
+     data-cidade="sao-paulo"
+     data-bairro="centro"
+     data-quartos="3"
+     data-banheiros="2"
+     data-vagas="1"
+     data-area="75"
+     data-preco="450000">
+    <a href="detalhes-imoveis-10.html" class="imovel-img-link">
+        <div class="imovel-img">
+            <img src="imagens/casa10/3.jpg" alt="Apartamento com 2 quartos">
+            <span class="tipo">Venda</span>
+            <span class="preco">R$ 600.000</span>
+        </div>
+    </a>
+    <div class="imovel-info">
+        <a href="detalhes-imoveis-10.html" class="imovel-info-link">
+            <h3>
+                Casa – 4 quartos e 3 banheiros  </h3>
+            <p><i class="fas fa-map-marker-alt"></i> Botucatu, SP</p>
+            <ul class="caracteristicas">
+                <li><i class="fas fa-bed"></i> <span>4</span> quartos</li>
+                <li><i class="fas fa-bath"></i> <span>3</span> banheiros</li>
+                <li><i class="fas fa-car"></i> <span>2 a 3</span> vaga</li>
+                
+            </ul>
+        </a>
+        <a href="detalhes-imoveis-10.html" class="btn-detalhes">Ver Detalhes</a>
+    </div>
+</div>
+
+<!-- Imóvel 11 - Apartamento à Venda -->
+<div class="imovel-card" 
+     data-id="1"
+     data-tipo="casa"
+     data-finalidade="venda"
+     data-cidade="sao-paulo"
+     data-bairro="centro"
+     data-quartos="3"
+     data-banheiros="2"
+     data-vagas="1"
+     data-area="75"
+     data-preco="450000">
+    <a href="detalhes-imoveis-11.html" class="imovel-img-link">
+        <div class="imovel-img">
+            <img src="imagens/casa11/491419975_9744655432293184_4634303497061325417_n.jpg" alt="Apartamento com 2 quartos">
+            <span class="tipo">Venda</span>
+            <span class="preco">R$ 180.000</span>
+        </div>
+    </a>
+    <div class="imovel-info">
+        <a href="detalhes-imoveis-11.html" class="imovel-info-link">
+            <h3>Terreno Green valley</h3>
+            <p><i class="fas fa-map-marker-alt"></i> Botucatu, SP</p>
+            <ul class="caracteristicas">
+                <li><i class="fas fa-vector-square"></i> <span>1000</span>m²</li>
+                
+            </ul>
+        </a>
+        <a href="detalhes-imoveis-11.html" class="btn-detalhes">Ver Detalhes</a>
+    </div>
+</div>
+
+<!-- Imóvel 12 - Apartamento à Venda -->
+<div class="imovel-card" 
+     data-id="1"
+     data-tipo="casa"
+     data-finalidade="venda"
+     data-cidade="sao-paulo"
+     data-bairro="centro"
+     data-quartos="3"
+     data-banheiros="2"
+     data-vagas="1"
+     data-area="75"
+     data-preco="450000">
+    <a href="detalhes-imoveis-12.html" class="imovel-img-link">
+        <div class="imovel-img">
+            <img src="imagens/casa12/482724603_1180240390179972_1725093049672362091_n.jpg" alt="Apartamento com 2 quartos">
+            <span class="tipo">Venda</span>
+            <span class="preco">R$ 70.000 + Parcelas</span>
+        </div>
+    </a>
+    <div class="imovel-info">
+        <a href="detalhes-imoveis-12.html" class="imovel-info-link">
+            <h3>Terreno  Livia</h3>
+            <p><i class="fas fa-map-marker-alt"></i> Botucatu, SP</p>
+            <ul class="caracteristicas">
+                <li><i class="fas fa-vector-square"></i> <span>300</span>m²</li>
+                
+            </ul>
+        </a>
+        <a href="detalhes-imoveis-12.html" class="btn-detalhes">Ver Detalhes</a>
+    </div>
+</div>
+
+<!-- Imóvel 13 - Apartamento à Venda -->
+<div class="imovel-card" 
+     data-id="1"
+     data-tipo="casa"
+     data-finalidade="venda"
+     data-cidade="sao-paulo"
+     data-bairro="centro"
+     data-quartos="3"
+     data-banheiros="2"
+     data-vagas="1"
+     data-area="75"
+     data-preco="450000">
+    <a href="detalhes-imoveis-13.html" class="imovel-img-link">
+        <div class="imovel-img">
+            <img src="imagens/casa13/491348430_702758872425429_3205942379710579374_n.jpg" alt="Apartamento com 2 quartos">
+            <span class="tipo">Venda</span>
+            <span class="preco">R$ 300.000</span>
+        </div>
+    </a>
+    <div class="imovel-info">
+        <a href="detalhes-imoveis-13.html" class="imovel-info-link">
+            <h3>Terreno  Rua das Cerejeiras</h3>
+            <p><i class="fas fa-map-marker-alt"></i> Botucatu, SP</p>
+            <ul class="caracteristicas">
+                <li><i class="fas fa-vector-square"></i> <span>608</span>m²</li>
+                
+            </ul>
+        </a>
+        <a href="detalhes-imoveis-13.html" class="btn-detalhes">Ver Detalhes</a>
+    </div>
+</div>
+
+<!-- Imóvel 14 - Apartamento à Venda -->
+<div class="imovel-card" 
+     data-id="1"
+     data-tipo="apartamento"
+     data-finalidade="casa"
+     data-cidade="sao-paulo"
+     data-bairro="centro"
+     data-quartos="3"
+     data-banheiros="2"
+     data-vagas="1"
+     data-area="75"
+     data-preco="450000">
+    <a href="detalhes-imoveis-14.html" class="imovel-img-link">
+        <div class="imovel-img">
+            <img src="imagens/casa14/483108334_1669825633617730_6562513685950197119_n.jpg" alt="Apartamento com 2 quartos">
+            <span class="tipo">Venda</span>
+            <span class="preco">R$ 55.000</span>
+        </div>
+    </a>
+    <div class="imovel-info">
+        <a href="detalhes-imoveis-14.html" class="imovel-info-link">
+            <h3>Terreno RubiãoJR </h3>
+            <p><i class="fas fa-map-marker-alt"></i> Botucatu, SP</p>
+            <ul class="caracteristicas">
+                
+                
+            </ul>
+        </a>
+        <a href="detalhes-imoveis-14.html" class="btn-detalhes">Ver Detalhes</a>
+    </div>
+</div>
+
+<!-- Imóvel 15 - Apartamento à Venda -->
+<div class="imovel-card" 
+     data-id="1"
+     data-tipo="apartamento"
+     data-finalidade="venda"
+     data-cidade="sao-paulo"
+     data-bairro="centro"
+     data-quartos="3"
+     data-banheiros="2"
+     data-vagas="1"
+     data-area="75"
+     data-preco="450000">
+    <a href="detalhes-imoveis-15.html" class="imovel-img-link">
+        <div class="imovel-img">
+            <img src="imagens/casa15/490598272_1430418474621708_6786374725293795861_n.jpg" alt="Apartamento com 2 quartos">
+            <span class="tipo">Venda</span>
+            <span class="preco">R$ 75.000</span>
+        </div>
+    </a>
+    <div class="imovel-info">
+        <a href="detalhes-imoveis-15.html" class="imovel-info-link">
+            <h3>Terreno RubiãoJR </h3>
+            <p><i class="fas fa-map-marker-alt"></i> Botucatu, SP</p>
+            <ul class="caracteristicas">
+                <li><i class="fas fa-vector-square"></i> <span>330</span>m²</li>
+                
+                
+            </ul>
+        </a>
+        <a href="detalhes-imoveis-15.html" class="btn-detalhes">Ver Detalhes</a>
+    </div>
+</div>
+
                 <!-- Adicione mais imóveis conforme necessário -->
             </div>
         </div>
