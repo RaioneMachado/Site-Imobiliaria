@@ -217,17 +217,18 @@ nav ul li a:hover {
     position: absolute;
     top: 15px;
     left: 15px;
-    background-color: #E96928;
+    background-color: #E96928; /* Cor laranja para venda */
     color: white;
-    padding: 5px 10px;
+    padding: 8px 15px; /* Aumentei o padding para tornar o quadrado maior */
     border-radius: 4px;
     font-weight: bold;
-    font-size: 0.8rem;
+    font-size: 1rem; /* Aumentei o tamanho da fonte */
     z-index: 1;
+    text-transform: uppercase; /* Para deixar ALUGUEL e VENDA em maiúsculas */
 }
 
 .tipo.aluguel {
-    background-color: #28a745;
+    background-color: #28a745; /* Cor verde para aluguel */
 }
 
 .preco {
