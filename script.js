@@ -118,7 +118,27 @@ function loadImovelDetails() {
                 'Condomínio': 'Incluso',
                 'Mobiliado': 'Parcialmente'
             }
+        },
+        '3': {
+            titulo: 'Casa 3 quartos',
+            tipo: 'Aluguel',
+            preco: 'R$ 2.500/mês',
+            localizacao: 'Barra, Rio de Janeiro - RJ',
+            quartos: 3,
+            banheiros: 2,
+            vagas: 2,
+            area: '120m²',
+            descricao: 'Casa espaçosa com jardim e área de lazer. Localizada em bairro tranquilo e residencial, próximo à praia e comércio.',
+            imagens: ['imovel2.jpg', 'casa-interior1.jpg', 'casa-interior2.jpg'],
+            caracteristicas: {
+                'Área útil': '100m²',
+                'Jardim': '20m²',
+                'Condomínio': 'Incluso',
+                'Mobiliado': 'Parcialmente'
+            }
         }
+        
+        
     };
     
     const imovel = imoveis[imovelId];
