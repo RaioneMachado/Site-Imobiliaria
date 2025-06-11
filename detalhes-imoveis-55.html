@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Casa 3 Quartos - Centro, São Paulo</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        body {
+            line-height: 1.6;
+            color: #0A0601;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .imovel-header {
+            margin-bottom: 30px;
+            border-bottom: 1px solid #0A0601;
+            padding-bottom: 20px;
+        }
+        
+        .imovel-titulo {
+            font-size: 28px;
+            color: #0A0601;
+            margin-bottom: 10px;
+        }
+        
+        .imovel-localizacao {
+            color: #0A0601;
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+        
+        .imovel-preco {
+            color: #0A0601;
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        
+        .gallery-container {
+            display: flex;
+            margin-bottom: 40px;
+            position: relative;
+        }
+        
+        .main-image-container {
+            width: 70%;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #f9f9f9;
+            border-radius: 8px;
+        }
+        
+        .main-image {
+            max-width: 100%;
+            max-height: 500px;
+            width: auto;
+            height: auto;
+            border-radius: 8px;
+            display: block;
+            transition: opacity 0.3s;
+        }
+        
+        .thumbnails {
+            width: 30%;
+            padding-left: 15px;
+            overflow-y: auto;
+            max-height: 500px;
+        }
+        
+        .thumbnail {
+            width: 100%;
+            height: auto;
+            max-height: 120px;
+            object-fit: contain;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            display: block;
+            transition: all 0.3s;
+            background: #f9f9f9;
+            padding: 5px;
+        }
+        
+        .thumbnail:hover {
+            transform: scale(1.02);
+            box-shadow: 0 4px 8px rgba(10,6,1,0.1);
+        }
+        
+        .thumbnail.active {
+            border: 3px solid #0A0601;
+            transform: scale(1.03);
+        }
+        
+        .imovel-info {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .imovel-descricao {
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+        
+        .imovel-caracteristicas {
+            list-style: none;
+        }
+        
+        .imovel-caracteristicas li {
+            margin-bottom: 10px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #0A0601;
+        }
+        
+        .imovel-caracteristicas strong {
+            color: #0A0601;
+        }
+        
+        .detalhes-lista {
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+        }
+        
+        .contato-section {
+            margin-top: 40px;
+            padding: 30px;
+            background-color: #f5f5f5;
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        .whatsapp-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #25D366, #128C7E);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 18px;
+            margin-top: 15px;
+            transition: all 0.3s;
+            box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+            border: none;
+            cursor: pointer;
+        }
+        
+        .whatsapp-btn:hover {
+            background: linear-gradient(135deg, #128C7E, #25D366);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 16px rgba(37, 211, 102, 0.4);
+        }
+        
+        .whatsapp-btn i {
+            margin-right: 10px;
+            font-size: 20px;
+        }
+        
+        @media (max-width: 768px) {
+            .imovel-info {
+                grid-template-columns: 1fr;
+            }
+            
+            .gallery-container {
+                flex-direction: column;
+            }
+            
+            .main-image-container, .thumbnails {
+                width: 100%;
+            }
+            
+            .main-image-container {
+                height: auto;
+                min-height: 300px;
+            }
+            
+            .main-image {
+                max-height: 400px;
+            }
+            
+            .thumbnails {
+                display: flex;
+                overflow-x: auto;
+                padding-left: 0;
+                padding-top: 15px;
+                max-height: none;
+            }
+            
+            .thumbnail {
+                width: 100px;
+                height: 80px;
+                margin-right: 10px;
+                margin-bottom: 0;
+                flex-shrink: 0;
+                object-fit: contain;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="imovel-header">
+        <h1 class="imovel-titulo">Terreno vilas12x25 </h1>
+        <p class="imovel-localizacao"><i class="fas fa-map-marker-alt"></i>Botucatu, SP</p>
+        <p class="imovel-preco">R$ 120.000</p>
+    </div>
+    
+    <div class="gallery-container">
+        <div class="main-image-container">
+            <img id="mainImage" src="imagens/casa55/WhatsApp Image 2025-06-11 at 17.27.15.jpeg" alt="Fachada da casa" class="main-image">
+        </div>
+
+        <div class="thumbnails">
+            <img src="imagens/casa55/WhatsApp Image 2025-06-11 at 17.27.15.jpeg" alt="Fachada" class="thumbnail active">
+
+        </div>
+    </div>
+    
+    </div>
+
+    <div class="imovel-info">
+        <div class="imovel-detalhes">
+            <h2>Descrição do Imóvel</h2>
+            <p class="imovel-descricao">
+                🏡 <strong>Não perca essa oportunidade</strong> 
+                <br>
+                Vende-se terreno 
+Bairro: Jardim Ype 
+10x25
+Valor 120 mil
+            </p>
+        </div>
+    </div>
+
+    <div class="contato-section">
+        <h2>Entrar em Contato</h2>
+        <p>Interessado neste imóvel? Entre em contato conosco!</p>
+        <a href="https://wa.me/5514981016842" class="whatsapp-btn">
+            <i class="fab fa-whatsapp"></i> WhatsApp
+        </a>
+        <p style="margin-top: 15px; font-size: 16px;">Clique no botão acima para conversar diretamente pelo WhatsApp</p>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const thumbnails = document.querySelectorAll('.thumbnail');
+            const mainImage = document.getElementById('mainImage');
+        
+            thumbnails.forEach(thumbnail => {
+                thumbnail.addEventListener('click', () => {
+                    // Atualiza a imagem principal com o src da miniatura clicada
+                    mainImage.src = thumbnail.src;
+                    
+                    // Remove a classe 'active' de todas as miniaturas
+                    thumbnails.forEach(t => t.classList.remove('active'));
+                    
+                    // Adiciona a classe 'active' apenas na miniatura clicada
+                    thumbnail.classList.add('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
